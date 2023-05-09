@@ -10,6 +10,7 @@ import { Entrada } from './components/Entrada.jsx';
 import HotelCard from './card/HotelCard';
 import { PerfilUsuario } from './components/PerfilUsuario.jsx';
 import  {UserProfile } from './components/PanelUser.jsx';
+import RegisterForm from './components/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
   {
     path: "/UserPanel",
     element: <UserProfile/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/Register",
+    element: <RegisterForm/>,
     errorElement: <ErrorPage />,
   },
 ]);
