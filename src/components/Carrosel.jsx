@@ -3,6 +3,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/Carrosel.css'
 
+//Juan 
+
 export const Carrosel = () => {
     return (
         <div className="container2">
