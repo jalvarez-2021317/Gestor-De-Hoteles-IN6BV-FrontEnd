@@ -9,6 +9,7 @@ import { PerfilUsuario } from './components/PerfilUsuario.jsx';
 import  {UserProfile } from './components/PanelUser.jsx';
 import RegisterForm from './components/Register.jsx';
 import HotelCard from './components/card/HotelCard.jsx';
+import Reservations from './components/Reservaciones.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      } ,
+      {
+        path: '/resv',
+        element:<Reservations/>
       } 
     ]
   },
