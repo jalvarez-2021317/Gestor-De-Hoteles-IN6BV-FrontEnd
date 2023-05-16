@@ -1,29 +1,31 @@
 import React from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import ErrorPage from './errorPage.jsx';
 import ReactDOM from 'react-dom/client'
+import { App } from './App.jsx';
+import { RouterProvider ,createBrowserRouter } from "react-router-dom";
+import ErrorPage from './errorPage.jsx';
 import { Login } from './Login'
 import { Entrada } from './components/Entrada.jsx';
-import HotelCard from './card/HotelCard';
 import { PerfilUsuario } from './components/PerfilUsuario.jsx';
 import  {UserProfile } from './components/PanelUser.jsx';
 import RegisterForm from './components/Register.jsx';
+import HotelCard from './components/card/HotelCard.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Entrada/>,
+    element: <App/>,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Entrada/>
+      },
+      {
+        path: '/login',
+        element: <Login />
+      } 
+    ]
   },
-  {
-    path: "/login",
-    element:<Login/>,
-    errorElement: <ErrorPage />,
-  },
-
   {
     path: "/hoteles",
     element: <HotelCard/>,
@@ -43,6 +45,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

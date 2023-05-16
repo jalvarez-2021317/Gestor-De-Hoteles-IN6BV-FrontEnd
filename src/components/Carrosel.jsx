@@ -8,7 +8,7 @@ import '../css/Carrosel.css'
 export const Carrosel = () => {
     return (
         <div className="container2">
-        <div className="mx-auto my-4">
+        <div className="">
           <Carousel interval={7000}>
             <Carousel.Item>
             <img src="https://cdn.pixabay.com/photo/2014/07/10/17/17/hotel-389256_1280.jpg" class="d-block w-100" alt="7" />

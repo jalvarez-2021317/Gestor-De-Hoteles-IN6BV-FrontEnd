@@ -7,3 +7,24 @@
     background: #ffe259;
     background-color: linear-gradient(to right, #ffa751, #ffe259);
 } */
+
+#menu li > a {
+    font-size: 18px;
+    color: #3f3f3f;
+}
+
+#menu form > button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #AAB7B8;
+    border-radius: 10px;
+    color: white;
+}
+
+.btn-register{
+    background-color: #CD6155;
+    border-radius: 10px;
+}

@@ -1,25 +1,41 @@
 import { Carrosel } from "./Carrosel"
 import { NavBar } from "./NavBar"
 import '../css/Entrada.css'
+import { NavBarLogin } from "./Navbar/NavBarLogin"
+import HotelCard from "./card/HotelCard"
 
 
 export const Entrada = () => {
     return (
         <>
             <div>
+                <NavBarLogin />
 
-                <NavBar/>
-                
-                <Carrosel/>
+                <Carrosel />
+
+                <br />
                 <br />
 
-                    <div class="container my-5">
-                        <h1>¡Bienvenidos a nuestro hotel!</h1>
-                        <p>"Despierta con el sol en nuestro hotel y comienza tu día con la belleza del amanecer."</p>
-                    </div>
-                    <img src="https://cdn.pixabay.com/photo/2021/06/01/12/39/beach-6301597_1280.jpg" class="d-block w-100 my-5" />
-                    <img src="https://cdn.pixabay.com/photo/2017/08/06/14/56/people-2593251_1280.jpg" class="d-block w-100 my-5" />
-                </div>
+                <section className="w-50 mx-auto text-center pt-5">
+                    <h1 className="p-3 border-3" />    
+
+                    <h2 className="f-2">
+                        <br />
+                        Encuentra en linea los mejores
+                        <span className="text-warning"> Hoteles </span>
+                         y <span className="text-warning"> Ofertas </span>
+                    </h2>                   
+
+                    <p class="p-4 fs-4">
+                        <span class="text-warning">Hotel Amanecer </span>
+                        te da la bienvenida, donde estamos seguros que gozaras de una buena experiencia,
+                        y cumpliremos tus expectativas.
+                    </p>
+                </section>
+
+                <HotelCard />
+
+            </div>
         </>
     )
 }
