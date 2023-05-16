@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { apiRegister } from "../api/RegisterApi";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    nombre: "",
+    correo: "",
     password: "",
-    confirmPassword: "",
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Aquí puedes agregar la lógica para enviar los datos del formulario al servidor
-    console.log(formData);
+    try {
+      const response = await apiRegister(
+        formData.nombre,
+        formData.correo,
+        formData.password,
+      );
+      console.log(response); // Maneja la respuesta del servidor según sea necesario
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleInputChange = (event) => {
@@ -25,23 +33,23 @@ const RegisterForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="name">
+      <Form.Group controlId="nombre">
         <Form.Label>Nombre completo</Form.Label>
         <Form.Control
           type="text"
-          name="name"
-          value={formData.name}
+          name="nombre"
+          value={formData.nombre}
           onChange={handleInputChange}
           placeholder="Ingresa tu nombre completo"
           required
         />
       </Form.Group>
-      <Form.Group controlId="email">
+      <Form.Group controlId="correo">
         <Form.Label>Correo electrónico</Form.Label>
         <Form.Control
           type="email"
-          name="email"
-          value={formData.email}
+          name="correo"
+          value={formData.correo}
           onChange={handleInputChange}
           placeholder="Ingresa tu correo electrónico"
           required
@@ -55,17 +63,6 @@ const RegisterForm = () => {
           value={formData.password}
           onChange={handleInputChange}
           placeholder="Ingresa tu contraseña"
-          required
-        />
-      </Form.Group>
-      <Form.Group controlId="confirmPassword">
-        <Form.Label>Confirmar contraseña</Form.Label>
-        <Form.Control
-          type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleInputChange}
-          placeholder="Confirma tu contraseña"
           required
         />
       </Form.Group>
