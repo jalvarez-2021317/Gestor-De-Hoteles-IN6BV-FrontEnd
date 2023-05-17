@@ -1,5 +1,6 @@
 import { Fragment } from "react"
 import hotelLogo from '../../img/hotel.png'
+import Logo from '../../img/Logo.png';
 import '../../login.css';
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +20,7 @@ export const NavBarLogin = () => {
                 <nav className="container-xxl bd-gutter flex-wrap flex-lg-nowrap navbar navbar-expand-lg bg-warning p-2" id="menu">
                     <div className="container-fluid">
                         <a className="navbar-brand " href="#">
-                            <img src={hotelLogo} alt="" width="33" height="30" className="d-inline-block align-text-top" />
+                            <img src={Logo} alt="" width="36" height="35" className="d-inline-block align-text-top" />
                                 <span className="text-light fs-5 fw-bolder px-1">Hotel</span>
                                 <span className="fs-5 fw-bolder">Amanecer</span>
                         </a>

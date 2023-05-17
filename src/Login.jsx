@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import hotelLogo from './img/hotel.png'
+import hotelLogo from './img/Logo.png'
 import './login.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
