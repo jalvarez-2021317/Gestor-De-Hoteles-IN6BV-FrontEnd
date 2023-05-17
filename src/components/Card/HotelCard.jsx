@@ -58,7 +58,7 @@ function HotelCard() {
             {group.map((card) =>(
               <Col md={4} key={card.id}>
                 <Card>
-                  <img src={hotel1} className='card-img-top' alt="" />
+                  <img src={hotel2} className='card-img-top' alt="" />
                   <Card.Body>
                     <Card.Title className='card-title'>{card.title}</Card.Title>
                     <Card.Text className='card-text'>{card.text}</Card.Text>
