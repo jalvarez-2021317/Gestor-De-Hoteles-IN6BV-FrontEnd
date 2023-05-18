@@ -14,6 +14,7 @@ import ReservationsComponent from './AdminHotel/BuscadorReseras.jsx';
 import UserReservation from './AdminHotel/BuscadorReseras.jsx';
 import { PageUsuario } from './pages/Usuario/PageUsuario.jsx';
 import { PageSuperAd } from './pages/SuperAdmin/PageSuperAd.jsx';
+import { PageAdmin } from './pages/Admin/PageAdmin.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       ,
       {
         path: '/adminH',
-        element:<UserReservation/>
+        element:<PageAdmin/>
       }
       ,
       {

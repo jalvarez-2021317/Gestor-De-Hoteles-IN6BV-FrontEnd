@@ -1,0 +1,23 @@
+/* Estilos para la tabla */
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    width: 100%; /* Ajusta el ancho de la tabla al 100% del contenedor */
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    padding: 10px; /* Aumenta el espacio interno de las celdas */
+  }
+  
+  /* Estilos para los botones */
+  button {
+    background-color: #8B8378; /* Color beige oscuro */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  

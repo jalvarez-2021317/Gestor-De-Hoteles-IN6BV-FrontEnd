@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 import {
   searchUserReservation,
   getReservations,
 } from "../api/ReservacionApi";
+import '../css/restx.css'
 
 const UserReservation = () => {
   const [usuarioId, setUsuarioId] = useState("");
@@ -50,7 +51,6 @@ const UserReservation = () => {
       <table>
         <thead>
           <tr>
-            <th>Nombre</th>
             <th>Habitación</th>
             <th>Cantidad</th>
             <th>Hotel</th>
@@ -59,7 +59,6 @@ const UserReservation = () => {
         <tbody>
           {reservations.map((reservation, index) => (
             <tr key={index}>
-              <td>{reservation.usuario.nombre}</td>
               <td>{reservation.habitacion}</td>
               <td>{reservation.cantidad}</td>
               <td>{reservation.hotel}</td>
