@@ -30,12 +30,8 @@ export const HotelCard = () => {
 
     <Fragment>
 
+      <h1>Hoteles</h1>
       <div className='container'>
-        <div className="row">
-          <div className="col-12">
-            <h1>Hoteles</h1>
-          </div>
-        </div>
         {Array.isArray(hotel) && hotel.length > 0 ? (
           <div className='row'>
             {hotel.map((hotel) => (

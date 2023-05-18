@@ -52,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/Admin',
         element:<PageSuperAd/>
+      },
+      {
+        path: '/hoteles',
+        element:<HotelCard/>
       }
     ]
   },
