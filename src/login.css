@@ -27,4 +27,20 @@
 .btn-register{
     background-color: #28B463;
     border-radius: 10px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.btn-register-user{
+    background-color: #C0392B;
+    border-radius: 10px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.btn-register-AdminH{
+    background-color: #C0392B;
+    border-radius: 10px;
+    text-decoration: none;
+    color: aliceblue;
 }

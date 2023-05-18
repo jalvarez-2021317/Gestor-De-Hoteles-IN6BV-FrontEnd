@@ -54,22 +54,32 @@ export const NavBarLogin = () => {
                       Registro
                     </Link>
                   </button>
-                  <button className="btn-primary" role="button">
-                    <Link to="/user" className="btn-primary" role="button">
-                      User
-                    </Link>
-                  </button>
-                  <button className="btn-primary" role="button">
-                    <Link to="/adminH" className="btn-primary" role="button">
-                      AdminH
-                    </Link>
-                  </button>
-                  <button className="btn-primary" role="button">
-                    <Link to="/Admin" className="btn-primary" role="button">
+                </div>
+
+                <div className="px-0">
+                  <button className="btn-register-user" role="button">
+                      <Link to="/user" className="btn-register-user" role="button">
+                        User
+                      </Link>
+                    </button>
+                </div>
+
+                <div className="px-2">
+                    <button className="btn-register-user" role="button">
+                      <Link to="/adminH" className="btn-register-user" role="button">
+                        AdminH
+                      </Link>
+                    </button>
+                </div>
+
+                <div className="px-">
+                  <button className="btn-register-user" role="button">
+                    <Link to="/Admin" className="btn-register-user" role="button">
                       Admin
                     </Link>
                   </button>
                 </div>
+
               </ul>
             </div>
           </div>
