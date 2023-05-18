@@ -6,6 +6,7 @@
 .card {
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 15px;
 }
 
 .btn-prymary{
@@ -15,4 +16,12 @@
 
 .btn-prymary:hover{
     background-color: black;
+}
+
+.row{
+    padding-right: 15px;
+}
+
+.card-text{
+    text-align: left;
 }

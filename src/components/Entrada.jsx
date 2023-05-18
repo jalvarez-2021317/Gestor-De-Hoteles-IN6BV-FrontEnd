@@ -2,7 +2,7 @@ import { Carrosel } from "./Carrosel"
 import { NavBar } from "./NavBar"
 import '../css/Entrada.css'
 import { NavBarLogin } from "./Navbar/NavBarLogin"
-import HotelCard from "./Card/HotelCard";
+import {HotelCard} from "./Card/HotelCard";
 import { Footer } from "./Footer/Footer";
 
 

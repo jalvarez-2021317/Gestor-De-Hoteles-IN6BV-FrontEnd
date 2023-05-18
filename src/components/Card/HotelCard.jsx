@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import hotelLogo from '../../img/hotel1.jpg';
 import hotel2 from '../../img/hotel2.jpg';
@@ -8,73 +8,55 @@ import hotel5 from '../../img/hotel5.jpg';
 
 import { NavBar } from '../NavBar';
 import '../../css/CardStyle.css';
+import { getHotel } from '../../api/HotelApi';
 
 
-function HotelCard() {
-  const cardData = [
-    {id: 1, 
-      title: 'Hotel Barcelo', 
-      text: 'El hotel Barceló Guatemala City es un magnífico hotel urbano que goza de una estratégica ubicación dentro de la principal zona de negocios', 
-      url: '#',    
-    },
-    {id: 2, 
-      title: 'Westin camino rea', 
-      text: 'Bienvenido a The Westin Camino Real, Guatemala. Disfrute de una experiencia Heavenly® en la Ciudad de Guatemala.', 
-      url: '#'
-    },
-    {id: 3, 
-    title: 'Hotel Clarion', 
-    text: 'El Hotel Clario Guatemala está ubicado en el popular distrito de Zona Viva y ofrece gimnasio, aparcamiento gratuito', 
-    url: '#'
-    },
-    {id: 4,
-    title: 'Guatemala Inn Hotel', 
-    text: 'Hotel Guatemala Inn cuenta con un servicio de traslado gratis disponible previa solicitud.', 
-    url: '#'
-    },
-    {id: 5, 
-    title: 'Hotel San Carlos', 
-    text: 'Hotel San Carlos en Ciudad de Guatemala es una antigua casa restaurada en Avenida Reforma, Zona 10.', 
-    url: '#'
-    }
-  ];
+export const HotelCard = () => {
+  const [hotel, setHotel] = useState([]);
+
+  const fetchHotels = async () => {
+    const data = await getHotel();
+    setHotel(data);
+  };
+
+  useEffect(() => {
+    fetchHotels();
+  }, [])
 
 
-  const cardGrupos = [];
-  for (let i = 0; i < cardData.length; i += 3) {
-    cardGrupos.push(cardData.slice(i, i + 3));
-  }
+
 
   return (
 
+
     <Fragment>
-        {/* <NavBar/> */}
+      {/* <NavBar/> */}
 
       <div className='container'>
         <br />
         <br />
-        {cardGrupos.map((group, index) => (
-          <Row key={index} className='mb-4'>
-            {group.map((card) =>(
-              <Col md={4} key={card.id}>
-                <Card>
-                  <img src={hotel2} className='card-img-top' alt="" />
-                  <Card.Body>
-                    <Card.Title className='card-title'>{card.title}</Card.Title>
-                    <Card.Text className='card-text'>{card.text}</Card.Text>
-                    <Button className='btn-prymary' href={card.url}>Ver</Button>
-                  </Card.Body>
-
-                </Card>
-              </Col>
+        {Array.isArray(hotel) && hotel.length > 0 ? (
+          <div className='row'>
+            {hotel.map((hotel) => (
+              <div className='col-4'>
+                <div className="card " key={hotel._id} >
+                  <img src={hotel2} className="card-img-top" alt="Not Found" />
+                  <div className="card-body">
+                    <h5 className="card-title">{hotel.nombre}</h5>
+                    <p className="card-text">{hotel.descripcion}</p>
+                    <p className="card-text">{hotel.direccion}</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
             ))}
-          </Row>
-        ))}
+          </div>
+        ) : (
+          <div>No hay reservaciones disponibles</div>
+        )}
       </div>
 
     </Fragment>
-    
+
   );
 }
-
-export default HotelCard;
