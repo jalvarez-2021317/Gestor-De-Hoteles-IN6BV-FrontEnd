@@ -3,10 +3,8 @@ import Swal from "sweetalert2";
 
 const BASE_URL = `http://localhost:8080/api`;
 
-// Función para realizar una reserva
 export const createReservation = async (usuario, habitacion, cantidad, hotel) => {
     try {
-        // Validar los datos de entrada
         if (!usuario || !habitacion || !cantidad || !hotel) {
             throw new Error(
                 "Por favor, proporciona todos los datos necesarios para realizar la reserva."
@@ -37,14 +35,13 @@ export const createReservation = async (usuario, habitacion, cantidad, hotel) =>
                 text: "¡La reserva se ha realizado correctamente!",
                 confirmButtonText: "Ok",
             });
-            return response.data; // Puedes devolver los datos de la reserva si los necesitas
+            return response.data;
         } else {
             throw new Error(
                 "Error al realizar la reserva. Por favor, intenta nuevamente."
             );
         }
     } catch (error) {
-        // Mostrar mensaje de error específico al usuario
         Swal.fire({
             icon: "error",
             title: "Error al realizar la reserva",
@@ -56,34 +53,30 @@ export const createReservation = async (usuario, habitacion, cantidad, hotel) =>
 
 export const searchUserReservation = async (usuarioId) => {
     try {
-      const token = localStorage.getItem("token");
-      console.log(token); // Agrega este console.log para verificar el valor del token
-  
-      const response = await axios.get(
-        `${BASE_URL}/reservaciones/hotel/usuario/${usuarioId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-  
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      // Mostrar mensaje de error al usuario
-      Swal.fire({
-        icon: "error",
-        title: "Error al buscar el usuario hospedado",
-        text:
-          "Ha ocurrido un error al buscar el usuario hospedado. Por favor, intenta nuevamente.",
-      });
-      return null;
-    }
-  };
-  
+        const token = localStorage.getItem("token");
+        console.log(token);
 
-// Función para obtener todas las reservaciones
+        const response = await axios.get(
+            `${BASE_URL}/reservaciones/hotel/usuario/`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        Swal.fire({
+            icon: "error",
+            title: "Error al buscar el usuario hospedado",
+            text: "Ha ocurrido un error al buscar el usuario hospedado. Por favor, intenta nuevamente.",
+        });
+        return null;
+    }
+};
+
 export const getReservations = async () => {
     try {
         const token = localStorage.getItem("token");
@@ -95,14 +88,12 @@ export const getReservations = async () => {
         });
 
         console.log(response.data);
-        return response.data || []; // Devuelve un array vacío si no hay reservaciones
+        return response.data || [];
     } catch (error) {
-        // Mostrar mensaje de error al usuario
         Swal.fire({
             icon: "error",
             title: "Error al obtener las reservaciones",
-            text:
-                "Ha ocurrido un error al obtener las reservaciones. Por favor, intenta nuevamente.",
+            text: "Ha ocurrido un error al obtener las reservaciones. Por favor, intenta nuevamente.",
         });
         return [];
     }
