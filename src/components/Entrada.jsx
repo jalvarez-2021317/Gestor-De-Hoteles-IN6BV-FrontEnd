@@ -2,8 +2,8 @@ import { Carrosel } from "./Carrosel"
 import { NavBar } from "./NavBar"
 import '../css/Entrada.css'
 import { NavBarLogin } from "./Navbar/NavBarLogin"
-import HotelCard from "./Card/HotelCard";
 import { Footer } from "./Footer/Footer";
+import { GaleryF } from "./Galery/GaleryF";
 
 
 export const Entrada = () => {
@@ -32,9 +32,14 @@ export const Entrada = () => {
                         te da la bienvenida, donde estamos seguros que gozaras de una buena experiencia,
                         y cumpliremos tus expectativas.
                     </p>
+
+                    <p class="p-4 fs-4">
+                        Contamos con el apoyo de hoteles de renombre como Hotel Barceló, Hotel Tikal Futura y 
+                        Hostal Tequila Sunrise.
+                    </p>
                 </section>
 
-                <HotelCard />
+                <GaleryF />
 
                 <Footer />
 

@@ -1,5 +1,4 @@
 import { Fragment } from "react"
-import hotelLogo from '../../img/hotel.png'
 import Logo from '../../img/Logo.png';
 import '../../login.css';
 import { useNavigate } from "react-router-dom";
@@ -32,7 +31,6 @@ export const NavBarLogin = () => {
                         <div className="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul className="navbar-nav">
                                 <li className="nav-item col-6 col-lg-auto">
-                                    <a className="nav-link active py-2 px-0 px-lg-2" aria-current="page" href="#">Inicio</a>
                                 </li>
                             </ul>
 
@@ -44,7 +42,7 @@ export const NavBarLogin = () => {
                                 </li>
                                 <button onClick={ handleSubmit } className="btn-primary" role="button"> Login </button>
                                 <div className="px-2">
-                                    <button className="btn-register" href="/register" role="button"> Registro </button>
+                                    <button className="btn-register" href="#" role="button"> Registro </button>
                                 </div>
                             </ul>
                             

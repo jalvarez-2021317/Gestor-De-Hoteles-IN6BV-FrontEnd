@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createReservation, getReservations } from "../api/ReservacionApi.js";
+import { getHotel } from "../api/HotelApi.js";
 
 const Reservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -9,6 +10,17 @@ const Reservations = () => {
     cantidad: 0,
     hotel: "",
   });
+
+  const [hotel, setHotel] = useState([]);
+
+  const fetchHotels = async () => {
+    const data = await getHotel();
+    setHotel(data);
+  };
+
+  useEffect(() => {
+    fetchHotels();
+  }, [])
 
   useEffect(() => {
     // Obtener las reservaciones al cargar el componente
@@ -47,40 +59,43 @@ const Reservations = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Reservaciones</h2>
       <form onSubmit={handleSubmit}>
-      <input
-                    type="text"
-                    name="usuario"
-                    value={newReservation.usuario}
-                    onChange={handleInputChange}
-                    placeholder="Usuario"
-                />
-                <input
-                    type="text"
-                    name="habitacion"
-                    value={newReservation.habitacion}
-                    onChange={handleInputChange}
-                    placeholder="Habitación"
-                />
-                <input
-                    type="number"
-                    name="cantidad"
-                    value={newReservation.cantidad}
-                    onChange={handleInputChange}
-                    placeholder="Cantidad"
-                />
-                <input
-                    type="text"
-                    name="hotel"
-                    value={newReservation.hotel}
-                    onChange={handleInputChange}
-                    placeholder="Hotel"
-                />
-                <button type="submit">Reservar</button>
+        <input
+          type="text"
+          name="usuario"
+          value={newReservation.usuario}
+          onChange={handleInputChange}
+          placeholder="Usuario"
+        />
+        <input
+          type="text"
+          name="habitacion"
+          value={newReservation.habitacion}
+          onChange={handleInputChange}
+          placeholder="Habitación"
+        />
+        <input
+          type="number"
+          name="cantidad"
+          value={newReservation.cantidad}
+          onChange={handleInputChange}
+          placeholder="Cantidad"
+        />
+          
+        <input
+          type="text"
+          name="hotel"
+          value={newReservation.hotel}
+          onChange={handleInputChange}
+          placeholder="Hotel"
+        />
+        <button type="submit">Reservar</button>
       </form>
-      <div>
+      <br />
+      <br />
+      <div >
         {Array.isArray(reservations) && reservations.length > 0 ? (
           <table className="table">
             <thead>

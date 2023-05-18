@@ -8,6 +8,7 @@ import { Entrada } from './components/Entrada.jsx';
 import { PerfilUsuario } from './components/PerfilUsuario.jsx';
 import  {UserProfile } from './components/PanelUser.jsx';
 import RegisterForm from './components/Register.jsx';
+import {HotelCard} from './components/Card/HotelCard.jsx';
 import HotelCard from '../components/card/HotelCard.jsx';
 import Reservations from './components/Reservaciones.jsx';
 import ReservationsComponent from './AdminHotel/BuscadorReseras.jsx';

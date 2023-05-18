@@ -5,38 +5,38 @@ export const NavBar = () => {
 
             <div>
                 <div className="header">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="#">HotelNuevoAmanecer</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <div className="container-fluid">
+                            <a className="navbar-brand" href="#">HotelNuevoAmanecer</a>
+                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
                             </button>
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Habitaciones</a>
+                            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                        <a className="nav-link active" aria-current="page" href="#">Habitaciones</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Hoteles</a>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Hoteles</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Evento</a>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Evento</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Reservación</a>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Reservación</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Facturas</a>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">Facturas</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <li className="nav-item dropdown">
+                                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Dropdown link
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item" href="#">Disponibilidad de la habitación</a></li>
-                                            <li><a class="dropdown-item" href="#">Usuario</a></li>
-                                            <li><a class="dropdown-item" href="#">Detalle de la cuenta</a></li>
-                                            <li><a class="dropdown-item" href="#">Servicios</a></li>
+                                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li><a className="dropdown-item" href="#">Disponibilidad de la habitación</a></li>
+                                            <li><a className="dropdown-item" href="#">Usuario</a></li>
+                                            <li><a className="dropdown-item" href="#">Detalle de la cuenta</a></li>
+                                            <li><a className="dropdown-item" href="#">Servicios</a></li>
                                         </ul>
                                     </li>
                                 </ul>
