@@ -6,7 +6,6 @@ import hotel3 from '../../img/hotel3.jpg';
 import hotel4 from '../../img/hotel4.jpg';
 import hotel5 from '../../img/hotel5.jpg';
 
-import { NavBar } from '../NavBar';
 import '../../css/CardStyle.css';
 import { getHotel } from '../../api/HotelApi';
 
