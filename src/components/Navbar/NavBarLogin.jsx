@@ -44,7 +44,7 @@ export const NavBarLogin = () => {
                                 </li>
                                 <button onClick={ handleSubmit } className="btn-primary" role="button"> Login </button>
                                 <div className="px-2">
-                                    <button className="btn-register" href="#" role="button"> Registro </button>
+                                    <button className="btn-register" href="/register" role="button"> Registro </button>
                                 </div>
                             </ul>
                             

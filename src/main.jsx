@@ -26,6 +26,10 @@ const router = createBrowserRouter([
         element: <Login />
       } ,
       {
+        path: '/register',
+        element:<RegisterForm/>
+      } ,
+      {
         path: '/resv',
         element:<Reservations/>
       } 
@@ -39,11 +43,6 @@ const router = createBrowserRouter([
   {
     path: "/UserPanel",
     element: <UserProfile/>,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/Register",
-    element: <RegisterForm/>,
     errorElement: <ErrorPage />,
   },
 ]);
