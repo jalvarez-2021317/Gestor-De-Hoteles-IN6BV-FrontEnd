@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
-
-import { createReservation, searchUserReservation, getReservations } from "../api/ReservacionApi";
+import {
+  searchUserReservation,
+  getReservations,
+} from "../api/ReservacionApi";
 
 const UserReservation = () => {
   const [usuarioId, setUsuarioId] = useState("");
   const [reservacion, setReservacion] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (token) {
-        const decodedToken = jwt_decode(token);
+      const decodedToken = jwt_decode(token);
 
-        if (decodedToken.role === "ADMIN_HOTEL") {
-          setIsAdmin(true);
-        }
+      if (decodedToken.role === "ADMIN_HOTEL") {
+        setIsAdmin(true);
+      }
     }
   }, []);
 
@@ -29,28 +32,42 @@ const UserReservation = () => {
     }
   };
 
-  const handleCreateReservation = async () => {
+  const handleSearchByHotel = async (hotel) => {
     try {
-      // Aquí puedes obtener los datos necesarios para la reserva (usuario, habitacion, cantidad, hotel)
-      const usuario = ""; // Obtener el usuario de alguna forma
-      const habitacion = ""; // Obtener la habitación de alguna forma
-      const cantidad = ""; // Obtener la cantidad de alguna forma
-      const hotel = ""; // Obtener el hotel de alguna forma
-
-      const response = await createReservation(usuario, habitacion, cantidad, hotel);
-      // Realizar las acciones necesarias después de crear la reserva, como actualizar el estado, mostrar mensajes, etc.
+      const response = await getReservations(hotel);
+      setReservations(response);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleGetReservations = async () => {
-    try {
-      const reservations = await getReservations();
-      // Realizar las acciones necesarias después de obtener las reservas, como actualizar el estado, mostrar mensajes, etc.
-    } catch (error) {
-      console.log(error);
+  const renderReservationsTable = () => {
+    if (reservations.length === 0) {
+      return <p>No hay reservas.</p>;
     }
+
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Habitación</th>
+            <th>Cantidad</th>
+            <th>Hotel</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reservations.map((reservation, index) => (
+            <tr key={index}>
+              <td>{reservation.usuario.nombre}</td>
+              <td>{reservation.habitacion}</td>
+              <td>{reservation.cantidad}</td>
+              <td>{reservation.hotel}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
   };
 
   return (
@@ -74,7 +91,15 @@ const UserReservation = () => {
         </div>
       )}
 
-      {/* Aquí puedes agregar botones o elementos para llamar a las funciones handleCreateReservation y handleGetReservations */}
+      {/* Agrega botones o elementos para llamar a las funciones handleCreateReservation y handleGetReservations */}
+      <button onClick={() => handleSearchByHotel("Hotel A")}>
+        Buscar Reservas (Hotel A)
+      </button>
+      <button onClick={() => handleSearchByHotel("Hotel B")}>
+        Buscar Reservas (Hotel B)
+      </button>
+
+      {renderReservationsTable()}
     </div>
   );
 };
