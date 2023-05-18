@@ -13,6 +13,7 @@ import Reservations from './components/Reservaciones.jsx';
 import ReservationsComponent from './AdminHotel/BuscadorReseras.jsx';
 import UserReservation from './AdminHotel/BuscadorReseras.jsx';
 import { PageUsuario } from './pages/Usuario/PageUsuario.jsx';
+import { PageSuperAd } from './pages/SuperAdmin/PageSuperAd.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,17 +37,22 @@ const router = createBrowserRouter([
         path: '/resv',
         element:<UserReservation/>
       } 
+      ,
+      {
+        path: '/user',
+        element:<PageUsuario/>
+      }
+      ,
+      {
+        path: '/adminH',
+        element:<UserReservation/>
+      }
+      ,
+      {
+        path: '/Admin',
+        element:<PageSuperAd/>
+      }
     ]
-  },
-  {
-    path: "/hoteles",
-    element: <PageUsuario/>,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/UserPanel",
-    element: <UserProfile/>,
-    errorElement: <ErrorPage />,
   },
 ]);
 

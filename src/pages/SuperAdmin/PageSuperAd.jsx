@@ -1,10 +1,16 @@
 import { Fragment } from "react"
+import { AgregarHotel } from "../../components/AgregarHotel"
+import { TableHotel } from "../../components/TableHotel"
 
 
 export const PageSuperAd = () => {
   return (
    <Fragment>
-    Page Super Admin
+    <div>
+    <AgregarHotel/>
+    <TableHotel/>
+    </div>
+   
    </Fragment>
   )
 }
