@@ -8,6 +8,7 @@ import hotel5 from '../../img/hotel5.jpg';
 
 import '../../css/CardStyle.css';
 import { getHotel } from '../../api/HotelApi';
+import { NavBar } from '../NavBar';
 
 
 export const HotelCard = () => {
@@ -27,13 +28,14 @@ export const HotelCard = () => {
 
   return (
 
-
     <Fragment>
-      {/* <NavBar/> */}
 
       <div className='container'>
-        <br />
-        <br />
+        <div className="row">
+          <div className="col-12">
+            <h1>Hoteles</h1>
+          </div>
+        </div>
         {Array.isArray(hotel) && hotel.length > 0 ? (
           <div className='row'>
             {hotel.map((hotel) => (
@@ -44,7 +46,6 @@ export const HotelCard = () => {
                     <h5 className="card-title">{hotel.nombre}</h5>
                     <p className="card-text">{hotel.descripcion}</p>
                     <p className="card-text">{hotel.direccion}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
               </div>
